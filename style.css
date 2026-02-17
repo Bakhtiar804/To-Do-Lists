@@ -1,0 +1,96 @@
+:root {
+    --background-color: rgb(71, 38, 38);
+
+}
+
+body {
+    width: 1180px;
+    margin: 0px auto;
+    background-color: lavender;
+}
+
+.parent-div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box-list {
+    border: 3px solid var(--background-color);
+    border-radius: 12px;
+    box-shadow: 5px 5px 52px gray;
+    width: 520px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 90px;
+
+}
+
+#heading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 19px;
+    color: var(--background-color);
+}
+
+.add-tasks-div input {
+    width: 320px;
+    border-radius: 7px;
+    border: 2px solid black;
+    padding: 10px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgb(228, 228, 204);
+}
+
+.add-tasks-div button {
+
+    width: 68px;
+    border-radius: 7px;
+    background-color: var(--background-color);
+    color: antiquewhite;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul li {
+    border: 2px solid var(--background-color);
+    width: 210px;
+    border-radius: 13px;
+    /* padding: 5px; */
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: rgb(213, 213, 235);
+    margin-bottom: 2px;
+    overflow-wrap: anywhere;
+    padding-left: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#dlt_button{
+    margin: 0px;
+    border: 3px solid var(--background-color);
+height: 30px;
+font-size: 10px;
+padding: 0px;
+width: 40px;
+border-left:  5px solid var(--background-color);
+}
