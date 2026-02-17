@@ -45,13 +45,21 @@ body {
 .add-tasks-div input {
     width: 320px;
     border-radius: 7px;
-    border: 2px solid black;
+    border: 2px solid var(--background-color);
     padding: 10px;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
     font-weight: 600;
     background-color: rgb(228, 228, 204);
+    transition: 2s;
+}
+
+#list_input:focus{
+
+    border: 3px solid var(--background-color);
+transform: scaleX(1.005);
+box-shadow: 2px 2px 13px rgb(92, 81, 81);
 }
 
 .add-tasks-div button {
@@ -60,16 +68,17 @@ body {
     border-radius: 7px;
     background-color: var(--background-color);
     color: antiquewhite;
-    border: 2px solid black;
+    border: 2px solid var(--background-color);
     padding: 10px;
     font-size: 15px;
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
 ul li {
     border: 2px solid var(--background-color);
-    width: 210px;
+    width: 300px;
     border-radius: 13px;
     /* padding: 5px; */
     color: black;
@@ -83,14 +92,32 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+margin-bottom: 5px;
 }
 #dlt_button{
     margin: 0px;
     border: 3px solid var(--background-color);
-height: 30px;
+height: auto;
 font-size: 10px;
 padding: 0px;
 width: 40px;
 border-left:  5px solid var(--background-color);
+cursor: pointer;
+/* border-top-left-radius: 0;
+border-bottom-left-radius: 0; */
 }
+
+#edit_button{
+    margin: 0px;
+    border: 3px solid var(--background-color);
+height: auto;
+font-size: 10px;
+padding: 0px;
+width: 40px;
+border-left:  5px solid var(--background-color);
+
+cursor: pointer;
+/* border-top-left-radius: 0;
+border-bottom-left-radius: 0; */
+}
+

@@ -12,12 +12,12 @@ function submit() {
     }
     lists.push(valueOfInput)
 
-    writingHtml(inputValue)
+    writingHtml()
 
     inputValue.value = ''
 }
 
-function writingHtml(inputValue) {
+function writingHtml() {
 
     var ul_list = document.getElementById('unorder_list')
 
@@ -28,8 +28,10 @@ function writingHtml(inputValue) {
         ul_list.innerHTML += `<li>
 
         ${lists[i]}
-        <button id="dlt_button" onclick="deleteTask()">DLT</button>
-        
+        <div>
+        <button id="dlt_button" onclick="deleteTask(${i})">DLT</button>
+        <button id="edit_button" onclick="editTask(${i})">EDIT</button>
+        </div>
         </li>`
 
     }
@@ -41,4 +43,20 @@ function deleteTask(index){
 
     writingHtml();
 
+}
+
+function editTask(index){
+
+    var newValue = prompt("Edit your task." , lists[index])
+
+    if(newValue === null){
+        return;
+    }
+    if(newValue.trim() === '') {
+        alert("Task Can't be empty.")
+    }
+
+    lists[index] = newValue;
+
+    writingHtml()
 }
