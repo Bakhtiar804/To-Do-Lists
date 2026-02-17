@@ -26,7 +26,7 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
     padding-top: 80px;
     padding-bottom: 90px;
@@ -121,3 +121,71 @@ cursor: pointer;
 border-bottom-left-radius: 0; */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query for Mobile Screens (425px and below) */
+@media (max-width: 425px) {
+    body {
+        /* Change fixed width to 100% so it doesn't overflow */
+        width: 100%;
+        margin: 0;
+    }
+
+    .box-list {
+        /* Shrink the main box to fit the screen width */
+        width: 90%; 
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    #heading h1 {
+        font-size: 24px; /* Slightly smaller title for mobile */
+    }
+
+    .add-tasks-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .add-tasks-div input {
+        /* Make input width responsive */
+        width: 80%; 
+        margin-bottom: 10px;
+    }
+
+    .add-tasks-div button#add_button {
+        width: 85%; /* Make the ADD button easier to tap */
+    }
+
+    ul {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        /* Adjust list items to fit the screen */
+        width: 85%; 
+        font-size: 14px;
+        padding-left: 5px;
+        border-radius: 10px;
+    }
+
+    #dlt_button, #edit_button {
+        width: 45px;
+        height: 30px;
+    }
+}
