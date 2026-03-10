@@ -52,7 +52,7 @@ body {
     font-size: 15px;
     font-weight: 600;
     background-color: rgb(228, 228, 204);
-    transition: 2s;
+    /* transition: 2s; */
 }
 
 #list_input:focus{
@@ -124,7 +124,10 @@ border-bottom-left-radius: 0; */
 
 
 
-
+.inputEmpty{
+    border-color: red  !important;
+    transition: none !important;
+}
 
 
 

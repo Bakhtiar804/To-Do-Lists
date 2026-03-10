@@ -7,15 +7,34 @@ function submit() {
     var valueOfInput = inputValue.value.trim()
 
     if (valueOfInput === '') {
-        alert('Please enter any tasks.');
+       var redAlert = document.getElementById('list_input')
+     redAlert.setAttribute("class" , 'inputEmpty')
+     redAlert.placeholder = "⚠️ Field cannot be empty!";
+     redAlert.style.backgroundColor = "#ffe6e6";
         return;
     }
+
     lists.push(valueOfInput)
 
     writingHtml()
 
     inputValue.value = ''
+
+    inputWork()
 }
+
+
+
+function inputWork(){
+    var redAlert = document.getElementById('list_input')
+    redAlert.removeAttribute("class" , 'inputEmpty');
+
+    redAlert.placeholder = 'Add Your Tasks'
+    redAlert.style.backgroundColor = "rgb(213, 213, 235)";
+
+}
+
+
 
 function writingHtml() {
 
