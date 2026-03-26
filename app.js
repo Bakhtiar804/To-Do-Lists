@@ -1,5 +1,9 @@
 
-var lists = [];
+var lists = JSON.parse(localStorage.getItem('lists'))  || [];
+
+// console.log(lists)
+
+writingHtml();
 
 function submit() {
 
@@ -7,34 +11,15 @@ function submit() {
     var valueOfInput = inputValue.value.trim()
 
     if (valueOfInput === '') {
-       var redAlert = document.getElementById('list_input')
-     redAlert.setAttribute("class" , 'inputEmpty')
-     redAlert.placeholder = "⚠️ Field cannot be empty!";
-     redAlert.style.backgroundColor = "#ffe6e6";
+        alert('Please enter any tasks.');
         return;
     }
-
     lists.push(valueOfInput)
-
+localStorage.setItem('lists', JSON.stringify(lists))
     writingHtml()
 
     inputValue.value = ''
-
-    inputWork()
 }
-
-
-
-function inputWork(){
-    var redAlert = document.getElementById('list_input')
-    redAlert.removeAttribute("class" , 'inputEmpty');
-
-    redAlert.placeholder = 'Add Your Tasks'
-    redAlert.style.backgroundColor = "rgb(213, 213, 235)";
-
-}
-
-
 
 function writingHtml() {
 
@@ -44,10 +29,10 @@ function writingHtml() {
 
     for (var i = 0; i < lists.length; i++) {
 
-        ul_list.innerHTML += `<li>
+        ul_list.innerHTML += `<li class="mypin">
 
         ${lists[i]}
-        <div>
+        <div class="set-size">
         <button id="dlt_button" onclick="deleteTask(${i})">DLT</button>
         <button id="edit_button" onclick="editTask(${i})">EDIT</button>
         </div>
@@ -56,26 +41,34 @@ function writingHtml() {
     }
 }
 
-function deleteTask(index){
+function deleteTask(index) {
 
-    lists.splice(index,1)
+
+
+    lists.splice(index, 1)
+
+    localStorage.setItem('lists',JSON.stringify(lists))
+
+
 
     writingHtml();
 
 }
 
-function editTask(index){
+function editTask(index) {
 
-    var newValue = prompt("Edit your task." , lists[index])
+    var newValue = prompt("Edit your task.", lists[index])
 
-    if(newValue === null){
+    if (newValue === null) {
         return;
     }
-    if(newValue.trim() === '') {
+    if (newValue.trim() === '') {
         alert("Task Can't be empty.")
     }
 
     lists[index] = newValue;
+
+    localStorage.setItem('lists',JSON.stringify(lists));
 
     writingHtml()
 }

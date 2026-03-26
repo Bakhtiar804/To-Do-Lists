@@ -1,12 +1,12 @@
 :root {
-    --background-color: rgb(71, 38, 38);
+    --background-color: #1E2835;
 
 }
 
 body {
     width: 1180px;
     margin: 0px auto;
-    background-color: lavender;
+    background-color: #758886;
 }
 
 .parent-div {
@@ -21,7 +21,7 @@ body {
 .box-list {
     border: 3px solid var(--background-color);
     border-radius: 12px;
-    box-shadow: 5px 5px 52px gray;
+    box-shadow: 5px 5px 52px rgb(165, 165, 165)202, 185, 185;
     width: 520px;
     height: auto;
     display: flex;
@@ -51,15 +51,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
     font-weight: 600;
-    background-color: rgb(228, 228, 204);
-    /* transition: 2s; */
+    background-color: rgb(219, 224, 228);
+    transition: 2s;
 }
 
-#list_input:focus{
+#list_input:focus {
 
     border: 3px solid var(--background-color);
-transform: scaleX(1.005);
-box-shadow: 2px 2px 13px rgb(92, 81, 81);
+    transform: scaleX(1.005);
+    box-shadow: 2px 2px 13px rgb(92, 81, 81);
 }
 
 .add-tasks-div button {
@@ -92,43 +92,49 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+
 }
-#dlt_button{
+
+#dlt_button {
     margin: 0px;
     border: 3px solid var(--background-color);
-height: auto;
-font-size: 10px;
-padding: 0px;
-width: 40px;
-border-left:  5px solid var(--background-color);
-cursor: pointer;
-/* border-top-left-radius: 0;
+    height: auto;
+    font-size: 10px;
+    padding: 0px;
+    width: 40px;
+    border-left: 5px solid var(--background-color);
+    cursor: pointer;
+    /* border-top-left-radius: 0;
 border-bottom-left-radius: 0; */
 }
 
-#edit_button{
+#edit_button {
     margin: 0px;
     border: 3px solid var(--background-color);
-height: auto;
-font-size: 10px;
-padding: 0px;
-width: 40px;
-border-left:  5px solid var(--background-color);
+    height: auto;
+    font-size: 10px;
+    padding: 0px;
+    width: 40px;
+    border-left: 5px solid var(--background-color);
 
-cursor: pointer;
-/* border-top-left-radius: 0;
+    cursor: pointer;
+    /* border-top-left-radius: 0;
 border-bottom-left-radius: 0; */
 }
 
 
 
+.mypin {
+    display: flex;
+    justify-content: space-between;
 
-.inputEmpty{
-    border-color: red  !important;
-    transition: none !important;
 }
 
+.set-size {
+    width: 40px;
+    margin-left: 7px;
+}
 
 
 
@@ -145,13 +151,14 @@ border-bottom-left-radius: 0; */
 
     .box-list {
         /* Shrink the main box to fit the screen width */
-        width: 90%; 
+        width: 90%;
         padding-top: 40px;
         padding-bottom: 50px;
     }
 
     #heading h1 {
-        font-size: 24px; /* Slightly smaller title for mobile */
+        font-size: 24px;
+        /* Slightly smaller title for mobile */
     }
 
     .add-tasks-div {
@@ -163,12 +170,13 @@ border-bottom-left-radius: 0; */
 
     .add-tasks-div input {
         /* Make input width responsive */
-        width: 80%; 
+        width: 80%;
         margin-bottom: 10px;
     }
 
     .add-tasks-div button#add_button {
-        width: 85%; /* Make the ADD button easier to tap */
+        width: 85%;
+        /* Make the ADD button easier to tap */
     }
 
     ul {
@@ -181,13 +189,14 @@ border-bottom-left-radius: 0; */
 
     ul li {
         /* Adjust list items to fit the screen */
-        width: 85%; 
+        width: 85%;
         font-size: 14px;
         padding-left: 5px;
         border-radius: 10px;
     }
 
-    #dlt_button, #edit_button {
+    #dlt_button,
+    #edit_button {
         width: 45px;
         height: 30px;
     }
