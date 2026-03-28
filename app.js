@@ -5,21 +5,6 @@ var lists = JSON.parse(localStorage.getItem('lists'))  || [];
 
 writingHtml();
 
-function submit() {
-
-    var inputValue = document.getElementById('list_input')
-    var valueOfInput = inputValue.value.trim()
-
-    if (valueOfInput === '') {
-        alert('Please enter any tasks.');
-        return;
-    }
-    lists.push(valueOfInput)
-localStorage.setItem('lists', JSON.stringify(lists))
-    writingHtml()
-
-    inputValue.value = ''
-}
 
 function writingHtml() {
 
@@ -55,20 +40,55 @@ function deleteTask(index) {
 
 }
 
+var editFunction = false;
+var editIndex = null;
+
 function editTask(index) {
 
-    var newValue = prompt("Edit your task.", lists[index])
+    
+    var input =  document.getElementById('list_input')
 
-    if (newValue === null) {
-        return;
-    }
-    if (newValue.trim() === '') {
-        alert("Task Can't be empty.")
+   input.value = lists[index];
+
+   editIndex = index;
+
+editFunction = true ;
+
+document.getElementById('add_button').innerHTML = 'Update'
+
+
+
+
+}
+
+function update(){
+
+    var input = document.getElementById('list_input')
+
+    var value = input.value.trim();
+
+    if (value === '') {
+       alert("Task Can't be empty.")
+       return;
     }
 
-    lists[index] = newValue;
+    if(editFunction === false) {
+        lists.push(value)
+      
+    }
+    else{
+        lists[editIndex] = value;
+        
+    }
 
     localStorage.setItem('lists',JSON.stringify(lists));
 
+    editFunction = false;
+    editIndex = null;
+    input.value = "";
+
+    document.getElementById('add_button').innerHTML = 'Add';
+    
     writingHtml()
 }
+
